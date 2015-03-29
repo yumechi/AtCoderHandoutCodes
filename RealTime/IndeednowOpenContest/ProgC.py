@@ -1,20 +1,23 @@
+# 速度が足らない？ Javaで通した http://indeednow-finala-open.contest.atcoder.jp/submissions/370999
 N, M = map(int, input().split())
-companies = []
+dp = [[[0 for _ in range(0, 101)] for _ in range(0, 101)] for _ in range(0, 101)]
 for _ in range(0, N):
-    temp = list(map(int, input().split()))
-    companies.append(temp)
-companies.sort(key=lambda x:(x[3],x[0],x[1],x[2]), reverse=True)
+    a, b, c, w = map(int, input().split())
+    if dp[a][b][c] < w:
+        dp[a][b][c] = w
+
+for i in range(0, 101):
+    for j in range(0, 101):
+        for k in range(0, 101):
+                t = dp[i][j][k]
+                if i > 0 and t < dp[i-1][j][k]:
+                    t = dp[i-1][j][k]
+                if j > 0 and t < dp[i][j-1][k]:
+                    t = dp[i][j-1][k]
+                if k > 0 and t < dp[i][j][k-1]:
+                    t = dp[i][j][k-1]
+                dp[i][j][k] = t
 
 for _ in range(0, M):
-    hunter = list(map(int, input().split()))
-    maxsalary = 0
-    for company in companies:
-        if company[0] > hunter[0]:
-            continue
-        if company[1] > hunter[1]:
-            continue
-        if company[2] > hunter[2]:
-            continue
-        maxsalary = company[3]
-        break
-    print(maxsalary)
+    a, b, c = map(int, input().split())
+    print(dp[a][b][c])
