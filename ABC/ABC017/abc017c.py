@@ -15,4 +15,4 @@ min = list[1]
 for i in range(2, M + 1):
     min = list[i] if min > list[i] else min
 
-x = print(sum - min)
+print(sum - min)
