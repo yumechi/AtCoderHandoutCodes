@@ -1,0 +1,1 @@
+read a; test $a == 2 && echo "WANWAN" || echo "BOWWOW"
