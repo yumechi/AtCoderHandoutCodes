@@ -16,5 +16,4 @@ maxnum = 999999
 	}
 	maxnum = [maxnum, [plateA, plateB].max].min
 }
-
 puts maxnum

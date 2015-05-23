@@ -13,3 +13,4 @@ for i in range(n ** 2):
         t >>= 1
     res = min(res, max(plateA, plateB))
 print(int(res))
+
