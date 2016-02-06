@@ -1,0 +1,1 @@
+p gets.split("+").select{|s|s.count("0")==0}.size
