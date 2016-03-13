@@ -1,0 +1,1 @@
+awk '$0=$2>$1?"Better":"Worse"'
