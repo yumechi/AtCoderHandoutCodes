@@ -1,0 +1,17 @@
+from collections import Counter
+
+def solve():
+    s = input()
+    counter = Counter(s)
+    odd = 0
+    for k, v in counter.most_common():
+        if v % 2 == 1:
+            odd += 1
+    if odd == 0:
+        print(len(s))
+    else:
+        print((((len(s) - odd) // 2) // odd) * 2 + 1)
+
+
+if __name__=="__main__":
+    solve()
