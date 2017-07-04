@@ -1,0 +1,1 @@
+puts gets.chomp.gsub(/eraser/, "").gsub(/erase/, "").gsub(/dreamer/, "").gsub(/dream/, "").length>0 ? "NO" : "YES"
