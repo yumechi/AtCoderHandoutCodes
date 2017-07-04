@@ -1,0 +1,14 @@
+def solve():
+    MAX_YEN = 2 * (10 ** 12)
+    a, k = map(int, input().split())
+    ans = 0
+    if k == 0:
+        print(MAX_YEN - a)
+        return
+    while a < MAX_YEN:
+        a = a + 1 + a * k
+        ans += 1
+    print(ans)
+
+if __name__=="__main__":
+    solve()
