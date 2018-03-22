@@ -49,11 +49,12 @@ int main(){
     long long n;
     cin >> n;
 
-    int ans = to_string(n).length();
+    auto itoslen = [=](int x) { return to_string(x).length(); };
+    int ans = itoslen(n);
     int limit = sqrt(n) + 1;
     for(int i = 1; i < limit; i++) {
         if(n % i == 0) {
-            ans = min(ans, (int)max(to_string(i).length(), to_string(n/i).length())); 
+            ans = min(ans, (int)max(itoslen(i), itoslen(n/i)));
         }
     }
 #if DEBUG
